@@ -11,6 +11,9 @@ client = tweepy.Client(
 
 
 (_, adjetive, animal, activity, club) = sys.argv
-print(sys.argv)
-#
-# client.create_tweet(text="Hello")
+
+hashtag = f"#{adjetive[:1]}{animal[:1]}{activity[:1]}{club[:1]}"
+
+message = f"{adjetive} {animal} {activity} {club}\n#NFT {hashtag}"
+
+client.create_tweet(text=message)
